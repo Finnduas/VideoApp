@@ -4,12 +4,13 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
-    
+    "start": "node app.js",
+    "dev": "node --watch app.js"
   },
   "author": "Mika Alber",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.3"
+    "express": "^4.18.3",
+    "uuid": "^9.0.1"
   }
 }
