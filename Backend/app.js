@@ -25,15 +25,24 @@ const videos = [
 
 ];
 
+
 app.get('/videos', function (req, res) {
-    const videosWithoutVideoURL = videos.map((item) => {
+    const query = req.query.q;
+    let filteredVideos = videos;
+    if(query){
+        filteredVideos = videos.filter((item) => {
+            return item.title.toLowerCase().includes(query.toLowerCase()); 
+        });
+    }
+    
+    const videosWithoutVideoURL = filteredVideos.map((item) => {
         return {
             thumbnailURL: item.thumbnailURL,
             title: item.title,
             id: item.id,
         };
     });
-    
+
     res.json(
         videosWithoutVideoURL
     );
@@ -52,5 +61,6 @@ app.get('/videos/:id', function (req, res) {
         res.status(404);
     }
 })
+
 
 app.listen(3000);
