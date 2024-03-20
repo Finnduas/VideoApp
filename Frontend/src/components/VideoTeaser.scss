@@ -1,0 +1,21 @@
+#videoTeaser {
+    border-radius: 5px;
+    overflow: hidden;
+
+    background-color: #434343;
+
+   img {
+        width: 100%;
+    }
+
+    figcaption{
+        font-weight: bold;
+        color: #FFFFFF;
+        font-size: 18px;
+        padding:12px 18px;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 18px;
+    }
+}

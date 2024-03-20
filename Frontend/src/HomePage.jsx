@@ -4,7 +4,6 @@ function HomePage() {
 
   return (
     <section id="homePage">
-        <h1>Home</h1>
         <VideoTeaser/>
         <VideoTeaser/>
         <VideoTeaser/>

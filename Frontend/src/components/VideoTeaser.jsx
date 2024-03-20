@@ -1,15 +1,19 @@
-import './VideoTeaser.css'
+import './VideoTeaser.scss'
+import { Link } from "react-router-dom";
 
 function VideoTeaser() {
 
   return (
-    <figure>
-        <img src="https://images.pexels.com/photos/20623990/pexels-photo-20623990/free-photo-of-blaumeise-vertraumt.jpeg" alt="" />
+    
+    <figure id="videoTeaser">
+        <Link to="/videos/id">
+        <img src="https://images.pexels.com/photos/4033148/pexels-photo-4033148.jpeg" alt="" />
         <figcaption>
-            lorem ipsum ad ametajdfklasödfjaökl
+            lorem ipsum 
         </figcaption>
-        
+        </Link>
     </figure>
+    
   )
 }
 
