@@ -1,6 +1,8 @@
 const { v4: uuidv4 } = require('uuid');
 const express = require('express');
+const cors = require('cors');
 const app = express();
+app.use(cors());
 const videos = [
     {
         thumbnailURL: "https://images.pexels.com/photos/20623990/pexels-photo-20623990/free-photo-of-blaumeise-vertraumt.jpeg",

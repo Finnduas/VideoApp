@@ -1,15 +1,15 @@
 import './VideoTeaser.scss'
 import { Link } from "react-router-dom";
 
-function VideoTeaser() {
+function VideoTeaser({title, id, teaser}) {
 
   return (
     
-    <figure id="videoTeaser">
-        <Link to="/videos/id">
-        <img src="https://images.pexels.com/photos/4033148/pexels-photo-4033148.jpeg" alt="" />
+    <figure id="videoTeaser" >
+        <Link to={"/videos/" + id}>
+        <img src={teaser} alt={title} />
         <figcaption>
-            lorem ipsum 
+            {title}
         </figcaption>
         </Link>
     </figure>

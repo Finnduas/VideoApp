@@ -6,17 +6,28 @@ import VideoDetailPage from './VideoDetailPage.jsx';
 import Header from './components/Header.jsx';
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
-<>
-  <Header/>
-    <Routes>
-        <Route path="/" element={<HomePage/>}/>
-        <Route path="/video/:videoID" element={<VideoDetailPage/>} />
-    </Routes>
-    </>
+    
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="/videos/:videoID" element={<VideoDetailPage />} />
+
+        
+        </Route>
+      </Routes>
+    
   )
+}
+function Layout() {
+  return (
+    <>
+    <Header/>
+      <Outlet />
+      </>
+  );
 }
 
 export default App
