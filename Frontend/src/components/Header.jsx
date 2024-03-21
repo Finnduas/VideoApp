@@ -9,21 +9,24 @@ function Header() {
 
     let [searchParams, setSearchParams] = useSearchParams();
     let q = searchParams.get('q');
-    
+
 
     const navigate = useNavigate();
-    const [searchterm, setSearchterm] = useState(q||"");
+    const [searchterm, setSearchterm] = useState(q || "");
     return (
         <header>
-            <Link to="/">
-                <img src={logo} alt="" />
-            </Link>
-            <input type="text" placeholder="Suche..." value={searchterm} onChange={(event) => { setSearchterm(event.target.value) }}
-                onKeyDown={(e) => {
-                    if (e.key === "Enter") {
-                        navigate("?q=" + searchterm);
-                    }
-                }} />
+
+            <div>
+                <Link to="/">
+                    <img src={logo} alt="" />
+                </Link>
+                <input type="text" placeholder="Suche..." value={searchterm} onChange={(event) => { setSearchterm(event.target.value) }}
+                    onKeyDown={(e) => {
+                        if (e.key === "Enter") {
+                            navigate("?q=" + searchterm);
+                        }
+                    }} />
+            </div>
         </header>
     )
 }
