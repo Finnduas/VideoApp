@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import './videoDetailPage.css'
-import { useEffect,useState } from 'react'
+import { useEffect, useState } from 'react'
 
 function VideoDetailPage() {
 
@@ -18,9 +18,24 @@ function VideoDetailPage() {
     fetchVideo();
   }, []);
 
+
   return (
+
     <section id="videoDetailPage">
-  <code>{JSON.stringify(video)}</code>
+      {video ?
+        <>
+          <video class="video" controls autoPlay poster={video.thumbnailURL}>
+            <source
+              src={video.videoURL}
+              type="video/mp4"
+            />
+            <p>Your browser doesn't support HTML5 video.</p>
+          </video>
+          <p>{video.title}</p>
+        </>
+        :
+        <p>loading...</p>
+      }
     </section>
   )
 }
