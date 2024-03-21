@@ -4,12 +4,13 @@ import { useEffect, useState } from 'react'
 
 function VideoDetailPage() {
 
+  const backend = "https://videoapp-ypep.onrender.com";
   let { videoID } = useParams();
   const [video, setVideo] = useState(null);
 
   console.log(videoID);
   async function fetchVideo() {
-    const response = await fetch("http://localhost:3000/videos/" + videoID);
+    const response = await fetch(backend + "/videos/" + videoID);
     const video = await response.json();
     setVideo(video);
   }
