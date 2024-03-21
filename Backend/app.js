@@ -4,7 +4,7 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 
-const backendURL = "http://localhost:3000";
+const backendURL = process.env.BACKEND_URL || "http://localhost:3000";
 const videos = [
     {
         thumbnailURL: backendURL + "/assets/blaumeise.jpeg",
