@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 
 function VideoDetailPage() {
 
-  const backend = "http://localhost:3000";
+  const backend = "https://videoapp-ypep.onrender.com";
   let { videoID } = useParams();
   const [video, setVideo] = useState(null);
 

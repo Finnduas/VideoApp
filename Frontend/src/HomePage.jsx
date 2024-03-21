@@ -3,7 +3,7 @@ import VideoTeaser from './components/VideoTeaser'
 import { useEffect, useState } from 'react';
 import { useParams,useSearchParams } from 'react-router-dom';
 function HomePage({ searchTerm }) {
-    const backend = "http://localhost:3000";
+    const backend = "https://videoapp-ypep.onrender.com";
     const [videos, setVideos] = useState(null);
     
     let [searchParams, setSearchParams] = useSearchParams();
